@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -72,11 +75,25 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="assault.designer.vb">
+      <DependentUpon>assault.vb</DependentUpon>
+    </Compile>
+    <Compile Include="assault.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="cequipment.vb" />
+    <Compile Include="combat.designer.vb">
+      <DependentUpon>combat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="combat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common_variables.vb" />
+    <Compile Include="cunit.vb" />
+    <Compile Include="morale_test.designer.vb">
+      <DependentUpon>morale_test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="morale_test.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -94,13 +111,43 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="resultform.designer.vb">
+      <DependentUpon>resultform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="resultform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scenariodefaults.designer.vb">
+      <DependentUpon>scenariodefaults.vb</DependentUpon>
+    </Compile>
+    <Compile Include="scenariodefaults.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities.vb" />
+    <Compile Include="Utilities_air_ops.vb" />
+    <Compile Include="utilities_file_handling.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="assault.resx">
+      <DependentUpon>assault.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="combat.resx">
+      <DependentUpon>combat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="morale_test.resx">
+      <DependentUpon>morale_test.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resultform.resx">
+      <DependentUpon>resultform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scenariodefaults.resx">
+      <DependentUpon>scenariodefaults.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +161,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
